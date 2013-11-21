@@ -1,0 +1,30 @@
+<% homepage = current_site.sections.find_by_name("primary_menu") %>
+<!DOCTYPE html>
+<html class="no-js">
+<%= render 'head' %>
+<body id='<%= @body_id %>'>
+  <section id="header" data-bg="<%= resource.thumbnail.thumbnail("1200x800#").url() if resource.thumbnail %>">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div id="content-wrapper" style="display:none;">
+          <div id="content">
+            <div class="text-container">
+              <%= image_tag("logo.png", :id => "logo") %>
+            </div>
+          </div>
+        </div>   
+      </div>
+    </div>
+  </section> 
+  <div id="page-wrapper">
+    <%= render "google_map" %>
+    <%= render 'contact' %>
+    <%= render 'footer' %>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <%= render 'javascripts' %>
+
+</body>  
+</html>
